@@ -1,0 +1,201 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="Button" x:Key="buttonHelp">
+        <Setter Property="Foreground" Value="{StaticResource brushHelpButton}"></Setter>
+        <Setter Property="BorderBrush" Value="{StaticResource brushHelpButton}"></Setter>
+
+        <Setter Property="BorderThickness" Value="2"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="Margin" Value="3, 0, 4, 4"></Setter>
+
+        <!--ChangenBehavior-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <!--borde y fondo-->
+                    <Border x:Name="bordeNormal"
+                            Margin="{TemplateBinding Margin}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10">
+                        <!--fondo del boton-->
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop x:Name="ButtonHelpBackgroundStart"
+                                                  Color="{StaticResource colorButtonHelpBackgroundTop}"
+                                                  Offset="0"></GradientStop>
+                                    <GradientStop x:Name="ButtonHelpBackgroundEnd"
+                                                  Color="{StaticResource colorButtonHelpBackgroundBottom}"
+                                                  Offset="1"></GradientStop>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <ContentPresenter Margin="{TemplateBinding Padding}"></ContentPresenter>
+                    </Border>
+                    <!--animation-->
+                    <ControlTemplate.Triggers>
+                        <!--mouse over-->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <!--stop other storyboards-->
+                                <StopStoryboard BeginStoryboardName="MouseOut"></StopStoryboard>
+                                <StopStoryboard BeginStoryboardName="MouseDown"></StopStoryboard>
+                                <StopStoryboard BeginStoryboardName="MouseUp"></StopStoryboard>
+                                <BeginStoryboard Name="MouseOver">
+                                    <Storyboard>
+                                        <!--brackground top color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetName="ButtonHelpBackgroundStart"
+                                            Storyboard.TargetProperty="Color"
+                                            To="{StaticResource colorButtonHelpBackgroundTopHover}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                        <!--background bottom color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetName="ButtonHelpBackgroundEnd"
+                                            Storyboard.TargetProperty="Color"
+                                            To="{StaticResource colorButtonHelpBackgroundBottomHover}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                        <!--foreground color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="Foreground.Color"
+                                            To="{StaticResource colorButtonHelpForegroundHover}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                        <!--border color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="BorderBrush.Color"
+                                            To="{StaticResource colorButtonHelpForegroundHover}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+
+                            <!--mouse out-->
+                            <Trigger.ExitActions>
+                                <!--stop other storyboards-->
+                                <StopStoryboard BeginStoryboardName="MouseOver"></StopStoryboard>
+                                <StopStoryboard BeginStoryboardName="MouseDown"></StopStoryboard>
+                                <StopStoryboard BeginStoryboardName="MouseUp"></StopStoryboard>
+                                <!--start storyboard-->
+                                <BeginStoryboard Name="MouseOut">
+                                    <Storyboard>
+                                        <!--brackground top color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetName="ButtonHelpBackgroundStart"
+                                            Storyboard.TargetProperty="Color"
+                                            To="{StaticResource colorButtonHelpBackgroundTop}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                        <!--background bottom color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetName="ButtonHelpBackgroundEnd"
+                                            Storyboard.TargetProperty="Color"
+                                            To="{StaticResource colorButtonHelpBackgroundBottom}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                        <!--foreground color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="Foreground.Color"
+                                            To="{StaticResource colorButtonHelpForeground}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                        <!--border color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="BorderBrush.Color"
+                                            To="{StaticResource colorButtonHelpForeground}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+
+                        <!--mouse down-->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <!--stop other storyboards-->
+                                <StopStoryboard BeginStoryboardName="MouseOut"></StopStoryboard>
+                                <StopStoryboard BeginStoryboardName="MouseOver"></StopStoryboard>
+                                <StopStoryboard BeginStoryboardName="MouseUp"></StopStoryboard>
+                                <!--start storyboard-->
+                                <BeginStoryboard Name="MouseDown">
+                                    <Storyboard>
+                                        <!--brackground top color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetName="ButtonHelpBackgroundStart"
+                                            Storyboard.TargetProperty="Color"
+                                            To="{StaticResource colorButtonHelpBackgroundTopClick}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                        <!--background bottom color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetName="ButtonHelpBackgroundEnd"
+                                            Storyboard.TargetProperty="Color"
+                                            To="{StaticResource colorButtonHelpBackgroundBottomClick}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                        <!--foreground color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="Foreground.Color"
+                                            To="{StaticResource colorButtonHelpForegroundClick}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                        <!--border color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="BorderBrush.Color"
+                                            To="{StaticResource colorButtonHelpForegroundClick}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <!--mouse up-->
+                            <Trigger.ExitActions>
+                                <!--stop other storyboards-->
+                                <StopStoryboard BeginStoryboardName="MouseOver"></StopStoryboard>
+                                <StopStoryboard BeginStoryboardName="MouseOut"></StopStoryboard>
+                                <StopStoryboard BeginStoryboardName="MouseUp"></StopStoryboard>
+                                <!--start storyboard-->
+                                <BeginStoryboard Name="MouseUp">
+                                    <Storyboard>
+                                        <!--brackground top color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetName="ButtonHelpBackgroundStart"
+                                            Storyboard.TargetProperty="Color"
+                                            To="{StaticResource colorButtonHelpBackgroundTopHover}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                        <!--background bottom color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetName="ButtonHelpBackgroundEnd"
+                                            Storyboard.TargetProperty="Color"
+                                            To="{StaticResource colorButtonHelpBackgroundBottomHover}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                        <!--foreground color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="Foreground.Color"
+                                            To="{StaticResource colorButtonHelpForegroundHover}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                        <!--border color-->
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="BorderBrush.Color"
+                                            To="{StaticResource colorButtonHelpForegroundHover}"
+                                            Duration="0:0:0:0">
+                                        </ColorAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
