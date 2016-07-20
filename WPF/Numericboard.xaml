@@ -1,0 +1,94 @@
+﻿<Window x:Class="SelfCheckOut.Numericboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Numericboard" Height="400" Width="300">
+    <Window.Background>
+        <LinearGradientBrush>
+            <GradientStop Offset="0" Color="{StaticResource colorWindowBackgroundTop}"></GradientStop>
+            <GradientStop Offset="1" Color="{StaticResource colorWindowBackgroundBottom}"></GradientStop>
+        </LinearGradientBrush>
+    </Window.Background>
+    <DockPanel>
+        <Grid>
+            <!-- Grid Columns Definitions -->
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!-- Grid Ros Definitions -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <!-- Numeric TextBox -->
+            <TextBox Name="txtNumber" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"></TextBox>
+            <!-- Backspace Button -->
+            <Button Name="btnBackspace" Grid.Column="0" Grid.Row="4" Style="{StaticResource buttonNumber}">
+                <StackPanel VerticalAlignment="Center">
+                    <Image Source="images/backspace.png" Style="{StaticResource icon}"></Image>
+                </StackPanel>
+            </Button>
+            <!-- Ok Button -->
+            <Button Name="btnOk" Grid.Column="2" Grid.Row="4" Style="{StaticResource buttonNumber}">
+                <StackPanel VerticalAlignment="Center">
+                    <Image Source="images/ok.png" Style="{StaticResource icon}"></Image>
+                </StackPanel>
+            </Button>
+            <!-- Numbers Buttons -->
+            <Button Name="btnZero" Grid.Column="1" Grid.Row="4" Style="{StaticResource buttonNumber}">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource textBlockNumber}">0</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="btnOne" Grid.Column="0" Grid.Row="3" Style="{StaticResource buttonNumber}">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource textBlockNumber}">1</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="btnTwo" Grid.Column="1" Grid.Row="3" Style="{StaticResource buttonNumber}">
+                <StackPanel VerticalAlignment="Center" >
+                    <TextBlock Style="{StaticResource textBlockNumber}">2</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="btnThree" Grid.Column="2" Grid.Row="3" Style="{StaticResource buttonNumber}">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource textBlockNumber}">3</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="btnFour" Grid.Column="0" Grid.Row="2" Style="{StaticResource buttonNumber}">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource textBlockNumber}">4</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="btnFive" Grid.Column="1" Grid.Row="2" Style="{StaticResource buttonNumber}">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource textBlockNumber}">5</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="btnSix" Grid.Column="2" Grid.Row="2" Style="{StaticResource buttonNumber}">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource textBlockNumber}">6</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="btnSeven" Grid.Column="0" Grid.Row="1" Style="{StaticResource buttonNumber}">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource textBlockNumber}">7</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="btnEight" Grid.Column="1" Grid.Row="1" Style="{StaticResource buttonNumber}">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource textBlockNumber}">8</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="btnNinex" Grid.Column="2" Grid.Row="1" Style="{StaticResource buttonNumber}">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource textBlockNumber}">9</TextBlock>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </DockPanel>
+</Window>

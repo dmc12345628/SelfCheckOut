@@ -1,0 +1,23 @@
+﻿<Application x:Class="PantallaCaja.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!-- Link Resource Dictionaries-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="styles/Colors.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="styles/Icon.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="styles/buttonsBottom/ButtonCoupon.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="styles/buttonsBottom/ButtonCancel.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="styles/buttonsBottom/ButtonHelp.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="styles/buttonsBottom/ButtonInfo.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="styles/buttonsBottom/ButtonPay.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="styles/buttonsBottom/TextBlockBottom.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="styles/buttonsNumericBoars/ButtonNumber.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="styles/buttonsNumericBoars/TextBlockNumber.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="styles/buttonsNumericBoars/TextBoxNumber.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
