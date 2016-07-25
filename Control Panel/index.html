@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<title>Control Panel Self Check Out</title>
+		<link href="css/style.css" rel="stylesheet"/>
+		<script src="js/functions.js"></script>
+		<script src="js/svg.js"></script>
+    </head>
+	<body onload="init();">
+		<header>
+			<h1>Self Check Out</h1>
+		</header>
+		<div id="values">
+		</div>
+		<div id="panel">
+			<svg id="svg">
+				<!-- hamburguer menu-->
+				<!--<rect x="140" y="50" rx="2" ry="2" width="70" height="70" 
+				fill="#607D8B" filter="url(#f3)">
+				</rect>				
+				<rect x="150" y="60" rx="2" ry="2" width="50" height="10" 
+				fill="#FFF"></rect>
+				<rect x="150" y="80" rx="2" ry="2" width="50" height="10" 
+				fill="#FFF"></rect>
+				<rect x="150" y="100" rx="2" ry="2" width="50" height="10" 
+				fill="#FFF"></rect>-->
+				
+				<!-- cash register color state-->
+				<!--<path d="M220 120 L260 120
+				L260 80 L330 80
+				L330 120 L390 120
+				L390 90 L360 90
+				L360 50 L450 50
+				L450 90 L420 90
+				L420 120 L460 120
+				L460 240 L480 260
+				L480 300 L200 300
+				L200 260 L220 240 Z"
+				fill="#757575"/>-->
+				
+				<!-- cash register ticket -->
+				<!--<rect x="240" y="155" width="110" height="40" 
+				fill="#FFF" style="stroke:#2196F3; stroke-width:5;"></rect>
+				<rect x="265" y="85" width="60" height="90" 
+				fill="#FFF" style="stroke:#2196F3; stroke-width:5;"></rect>-->
+				<!-- cash register screen -->
+				<rect x="365" y="55" width="80" height="30" 
+				fill="#FFF"></rect>
+				<rect x="370" y="60" width="70" height="20" 
+				fill="#2196F3"></rect>
+				<!-- cash register box -->
+				<circle cx="340" cy="280" r="15" fill="#FFF" stroke="#2196F3" stroke-width="5"/>
+				<!-- cash register board -->
+				<!-- cash register screen board -->
+				<rect x="370" y="140" width="70" height="20" 
+				fill="#FFF" ></rect>
+				<!-- cash register tails -->
+				<!-- first line -->
+				<rect x="370" y="165" width="20" height="20" 
+				fill="#FFF" ></rect>
+				<rect x="395" y="165" width="20" height="20" 
+				fill="#FFF" ></rect>
+				<rect x="420" y="165" width="20" height="20" 
+				fill="#FFF" ></rect>
+				<!-- second line -->
+				<rect x="370" y="190" width="20" height="20" 
+				fill="#FFF" ></rect>
+				<rect x="395" y="190" width="20" height="20" 
+				fill="#FFF" ></rect>
+				<rect x="420" y="190" width="20" height="20" 
+				fill="#FFF" ></rect>
+				<!-- third line -->
+				<rect x="370" y="215" width="20" height="20" 
+				fill="#FFF" ></rect>
+				<rect x="395" y="215" width="20" height="20" 
+				fill="#FFF" ></rect>
+				<rect x="420" y="215" width="20" height="20" 
+				fill="#FFF" ></rect>
+				
+				
+				<!-- hamburger shadow -->
+				<defs>
+					<filter id="f3" x="0" y="0" width="70px" height="70px">
+						<feOffset result="offOut" in="SourceAlpha" dx="-1" dy="-1" />
+						<feGaussianBlur result="blurOut" in="offOut" stdDeviation="4" />
+						<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+					</filter>
+				</defs>
+			</svg>
+		</div>
+	</body>
+</html>
